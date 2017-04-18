@@ -1,0 +1,42 @@
+causeid,cause,ICD-10
+1,Intestinal infectious diseases,A00-A09
+2,Tuberculosis,A15-A19
+3,Streptococcal sepsis,A40-A41
+4,Viral hepatitis,B15-B19
+5,Human immunodeficiency virus [HIV] disease,B20-B24
+6,Malignant neoplasms,C00-C97
+7,neoplasms,D00-D48
+8,anemias,D50-D64
+9,Diabetes mellitus,E10-E14
+10,Mental disorders,F01-F03
+11,Inflammatory diseases,"G00, G03"
+12,Spinal muscular atrophy and related syndromes,G12
+13,Parkinson's disease,G20-G21
+14,Alzheimer's disease,G30
+15,Hypertensive diseases,I10-I15
+16,Ischemic heart diseases,"I01-I02.0, I05-I09, I20-I25, I27, I30-I52"
+17,Cerebrovascular diseases,I60-I69
+18,Atherosclerosis,I70
+19,Aortic aneurysm and dissection,I71
+20,Influenza,J10-J11
+21,Pneumonia,J12-J18
+22,Acute bronchitis,J20-J21
+23,Chronic lower respiratory diseases,J40-J47
+24,Pneumoconiosis?,J60-J65
+25,Respiratory conditions,"J66, J68-J69"
+26,"Diseases of esophagus, stomach and duodenum",K25-K28
+27,Hernia,"K40-K46, K56"
+28,Diseases of liver,"K70, K73-K74"
+29,"Disorders of gallbladder, biliary tract and pancreas",K80-K82
+30,Diseases of the skin and subcutaneous tissue,L00-L99
+31,Diseases of the musculoskeletal system and connective tissue,M00-M99
+32,Diseases of the genitourinary system,"N00-N07, N17-N19, N25-N27"
+33,"Pregnancy, childbirth and the puerperium",O00-O99
+34,Certain conditions originating in the perinatal period,P00-P96
+35,"Congenital malformations, deformations and chromosomal abnormalities?",Q00-Q99
+36,Age-related physical debility,R54
+37,SIDS,R95
+38,External causes of morbidity,"V01-X59, Y85-Y86"
+39,Intentional self-harm,"X60-X84, Y87.0"
+40,Assault?,"X85-Y09, Y87.1"
+41,Others,
