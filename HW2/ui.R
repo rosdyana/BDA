@@ -56,18 +56,24 @@ ui <- dashboardPage(
                   DT::dataTableOutput("table")
                 ),
                 box(
-                  title = "Histogram",
+                  title = "Home Statistic",
                   status = "info",
                   solidHeader = TRUE,
                   collapsible = TRUE,
-                  h2("league histogram content")
+                  selectInput("homechartType",
+                              "Select Type",
+                              list("Pie", "Bar")),
+                  plotlyOutput("homestatsplot")
                 ),
                 box(
-                  title = "Histogram",
+                  title = "Away Statistic",
                   status = "info",
                   solidHeader = TRUE,
                   collapsible = TRUE,
-                  h2("league histogram content")
+                  selectInput("awaychartType",
+                              "Select Type",
+                              list("Pie", "Bar")),
+                  plotlyOutput("awaystatsplot")
                 )
               )),
       
@@ -81,7 +87,7 @@ ui <- dashboardPage(
           collapsible = TRUE,
           tags$div(
             HTML(
-              "<p>Developer : Rosdyana Kusuma</br>email : rosdyana.kusuma@gmail.com</p>"
+              "<p>Developer : Rosdyana Kusuma</br>Email : <a href=mailto:rosdyana.kusuma@gmail.com>rosdyana.kusuma@gmail.com</a></p>"
             )
           )
         )
