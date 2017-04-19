@@ -1,43 +1,32 @@
 library(plotly)
 library(jsonlite)
 library(dplyr)
-
+table_url = ""
+fbd = TRUE
+leagueInput <- function(x) {
+  if (x == "Premier League") {
+    table_url = "premier_league.json"
+  }
+  if (x == "Championship") {
+    table_url = "england_Championship.json"
+  }
+  if (x == "League One") {
+    table_url = "england_leagueone.json"
+  }
+  if (x == "Serie A") {
+    table_url = "ita_seriea.json"
+  }
+  if (x == "Serie B") {
+    table_url = "ita_serieb.json"
+  }
+  return(table_url)
+}
 server <- function(input, output) {
-  # serie-A Italy topscorers
-  serie_a_ita_topscorers = "http://soccer.sportsopendata.net/v1/leagues/serie-a/seasons/16-17/topscorers"
-  serie_a_ita_topscorers_data = fromJSON(serie_a_ita_topscorers)
-  serie_a_ita_topscorers_df = tbl_df(
-    data.frame(
-      serie_a_ita_topscorers_data$data$topscorers,
-      stringsAsFactors = FALSE
-    )
-  )
   output$table <- DT::renderDataTable(DT::datatable({
-    table_url = ""
-    fbd = FALSE
-    if (input$league == "Premier League") {
-      table_url = "http://api.football-data.org/v1/soccerseasons/426/leagueTable"
-      fbd = TRUE
-    }
-    if (input$league == "Championship") {
-      table_url = "http://api.football-data.org/v1/soccerseasons/427/leagueTable"
-      fbd = TRUE
-    }
-    if (input$league == "League One") {
-      table_url = "http://api.football-data.org/v1/soccerseasons/428/leagueTable"
-      fbd = TRUE
-    }
-    if (input$league == "Serie A") {
-      table_url = "http://api.football-data.org/v1/soccerseasons/438/leagueTable"
-      fbd = TRUE
-    }
-    if (input$league == "Serie B") {
-      table_url = "http://soccer.sportsopendata.net/v1/leagues/serie-b/seasons/16-17/standings"
+    xx = leagueInput(input$league)
+    table_data_ori = fromJSON(xx)
+    if (xx == "ita_serieb.json")
       fbd = FALSE
-    }
-    
-    table_data_ori = fromJSON(table_url)
-    
     if (fbd) {
       table_data = table_data_ori$standing
       table_df = data.frame(
@@ -62,7 +51,8 @@ server <- function(input, output) {
         F = table_data$overall$scores,
         A = table_data$overall$conceded,
         G = table_data$overall$goal_difference,
-        Pts = table_data$overall$points
+        Pts = table_data$overall$points,
+        fbd = TRUE
       )
     }
     
@@ -70,4 +60,73 @@ server <- function(input, output) {
     data <- table_df
     data
   }))
+  
+  output$homestatsplot <- renderPlotly({
+    xx = leagueInput(input$league)
+    table_data_ori = fromJSON(xx)
+    table_data = table_data_ori$standing
+    df = data.frame(Team = table_data$team,
+                    W = table_data$home$wins)
+    if (input$homechartType == "Bar") {
+      p <- plot_ly(df, y = ~ W * 3, x = ~ Team)
+    } else{
+      p <-
+        plot_ly(
+          df,
+          labels = ~ table_data$team,
+          values = ~ table_data$home$wins * 3,
+          type = 'pie',
+          showlegend = FALSE
+        ) %>%
+        layout(
+          title = '',
+          xaxis = list(
+            showgrid = FALSE,
+            zeroline = FALSE,
+            showticklabels = FALSE
+          ),
+          yaxis = list(
+            showgrid = FALSE,
+            zeroline = FALSE,
+            showticklabels = FALSE
+          )
+        )
+    }
+    p
+  })
+  
+  output$awaystatsplot <- renderPlotly({
+    xx = leagueInput(input$league)
+    table_data_ori = fromJSON(xx)
+    table_data = table_data_ori$standing
+    df = data.frame(Team = table_data$team,
+                    W = table_data$away$wins)
+    if (input$awaychartType == "Bar") {
+      p <- plot_ly(df, y = ~ W * 3, x = ~ Team)
+    } else {
+      p <-
+        plot_ly(
+          df,
+          labels = ~ table_data$team,
+          values = ~ table_data$away$wins * 3,
+          type = 'pie',
+          showlegend = FALSE
+        ) %>%
+        layout(
+          title = '',
+          xaxis = list(
+            showgrid = FALSE,
+            zeroline = FALSE,
+            showticklabels = FALSE
+          ),
+          yaxis = list(
+            showgrid = FALSE,
+            zeroline = FALSE,
+            showticklabels = FALSE
+          )
+        )
+    }
+    
+    p
+  })
 }
