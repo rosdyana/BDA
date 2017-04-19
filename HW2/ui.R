@@ -37,10 +37,10 @@ ui <- dashboardPage(
     tabItems(
       # First tab content
       tabItem(tabName = "league_table",
-              fluidRow(
+              fluidPage(
                 box(
                   title = "League Table",
-                  width = 500,
+                  width = NULL,
                   status = "primary",
                   solidHeader = TRUE,
                   collapsible = TRUE,
@@ -54,9 +54,7 @@ ui <- dashboardPage(
                     )
                   ),
                   DT::dataTableOutput("table")
-                )
-              ),
-              fluidRow(
+                ),
                 box(
                   title = "Histogram",
                   status = "info",
@@ -64,15 +62,12 @@ ui <- dashboardPage(
                   collapsible = TRUE,
                   h2("league histogram content")
                 ),
-                tabBox(
-                  # Title can include an icon
-                  title = tagList(shiny::icon("gear"), "tabBox status"),
-                  tabPanel(
-                    "Tab1",
-                    "Currently selecsted tab from first box:",
-                    verbatimTextOutput("tabset1Selected")
-                  ),
-                  tabPanel("Tab2", "Tab content 2")
+                box(
+                  title = "Histogram",
+                  status = "info",
+                  solidHeader = TRUE,
+                  collapsible = TRUE,
+                  h2("league histogram content")
                 )
               )),
       
@@ -81,10 +76,13 @@ ui <- dashboardPage(
         box(
           title = "About",
           status = "info",
+          width = NULL,
           solidHeader = TRUE,
           collapsible = TRUE,
           tags$div(
-            HTML("<p>Developer : Rosdyana Kusuma</br>email : rosdyana.kusuma@gmail.com</p>")
+            HTML(
+              "<p>Developer : Rosdyana Kusuma</br>email : rosdyana.kusuma@gmail.com</p>"
+            )
           )
         )
       ),
