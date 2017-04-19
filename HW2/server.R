@@ -69,6 +69,15 @@ server <- function(input, output) {
                     W = table_data$home$wins)
     if (input$homechartType == "Bar") {
       p <- plot_ly(df, y = ~ W * 3, x = ~ Team)
+    } else if (input$homechartType == "Line") {
+      p <-
+        plot_ly(
+          df,
+          y = ~ W * 3,
+          x = ~ Team,
+          type = 'scatter',
+          mode = 'lines'
+        )
     } else{
       p <-
         plot_ly(
@@ -103,6 +112,16 @@ server <- function(input, output) {
                     W = table_data$away$wins)
     if (input$awaychartType == "Bar") {
       p <- plot_ly(df, y = ~ W * 3, x = ~ Team)
+    }
+    else if (input$awaychartType == "Line") {
+      p <-
+        plot_ly(
+          df,
+          y = ~ W * 3,
+          x = ~ Team,
+          type = 'scatter',
+          mode = 'lines'
+        )
     } else {
       p <-
         plot_ly(
@@ -129,4 +148,23 @@ server <- function(input, output) {
     
     p
   })
+  output$topscorertable <- DT::renderDataTable(DT::datatable({
+    # xx = leagueInput(input$league)
+    table_data_ori = fromJSON("ita_topscorers.json")
+    
+    table_data = table_data_ori$data$topscorers
+    table_df = data.frame(
+      Name = table_data$fullname,
+      Team = table_data$team,
+      Nationality = table_data$nationality,
+      Matches = table_data$matches,
+      Penalties = table_data$penalties,
+      Goals = table_data$goals
+      
+    )
+    
+    
+    data <- table_df
+    data
+  }))
 }
