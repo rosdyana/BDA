@@ -61,7 +61,8 @@ ui <- dashboardPage(
                     list(
                       "England" = c("Premier League", "Championship", "League One"),
                       "Italy" = c("Serie A", "Serie B"),
-                      "Spain" = c("Primera Division", "Liga Adelante")
+                      "Spain" = c("Primera Division", "Liga Adelante"),
+                      "Germany" = c("1st Bundesliga","2nd Bundesliga")
                     )
                   ),
                   DT::dataTableOutput("table")

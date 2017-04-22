@@ -1,0 +1,782 @@
+{
+   "_links": {
+      "self": {
+         "href": "http://api.football-data.org/v1/soccerseasons/428/leagueTable/?matchday=44"
+      },
+      "soccerseason": {
+         "href": "http://api.football-data.org/v1/soccerseasons/428"
+      }
+   },
+   "leagueCaption": "League One 2016/17",
+   "matchday": 44,
+   "standing": [
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/356"
+            }
+         },
+         "position": 1,
+         "teamName": "Sheffield United FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/9/9c/Sheffield_United_FC_logo.svg",
+         "playedGames": 44,
+         "points": 94,
+         "goals": 86,
+         "goalsAgainst": 45,
+         "goalDifference": 41,
+         "wins": 28,
+         "draws": 10,
+         "losses": 6,
+         "home": {
+            "goals": 39,
+            "goalsAgainst": 14,
+            "wins": 16,
+            "draws": 3,
+            "losses": 3
+         },
+         "away": {
+            "goals": 47,
+            "goalsAgainst": 31,
+            "wins": 12,
+            "draws": 7,
+            "losses": 3
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/60"
+            }
+         },
+         "position": 2,
+         "teamName": "Bolton Wanderers FC",
+         "crestURI": null,
+         "playedGames": 44,
+         "points": 80,
+         "goals": 63,
+         "goalsAgainst": 36,
+         "goalDifference": 27,
+         "wins": 23,
+         "draws": 11,
+         "losses": 10,
+         "home": {
+            "goals": 32,
+            "goalsAgainst": 16,
+            "wins": 12,
+            "draws": 7,
+            "losses": 3
+         },
+         "away": {
+            "goals": 31,
+            "goalsAgainst": 20,
+            "wins": 11,
+            "draws": 4,
+            "losses": 7
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1073"
+            }
+         },
+         "position": 3,
+         "teamName": "Fleetwood Town FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/6/64/Fleetwood_Town_FC.png",
+         "playedGames": 44,
+         "points": 78,
+         "goals": 61,
+         "goalsAgainst": 41,
+         "goalDifference": 20,
+         "wins": 22,
+         "draws": 12,
+         "losses": 10,
+         "home": {
+            "goals": 34,
+            "goalsAgainst": 20,
+            "wins": 12,
+            "draws": 7,
+            "losses": 3
+         },
+         "away": {
+            "goals": 27,
+            "goalsAgainst": 21,
+            "wins": 10,
+            "draws": 5,
+            "losses": 7
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1078"
+            }
+         },
+         "position": 4,
+         "teamName": "Scunthorpe United FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/9/95/Scunthorpe_United_FC_logo.svg",
+         "playedGames": 44,
+         "points": 76,
+         "goals": 75,
+         "goalsAgainst": 52,
+         "goalDifference": 23,
+         "wins": 22,
+         "draws": 10,
+         "losses": 12,
+         "home": {
+            "goals": 43,
+            "goalsAgainst": 21,
+            "wins": 13,
+            "draws": 6,
+            "losses": 3
+         },
+         "away": {
+            "goals": 32,
+            "goalsAgainst": 31,
+            "wins": 9,
+            "draws": 4,
+            "losses": 9
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1067"
+            }
+         },
+         "position": 5,
+         "teamName": "Bradford City AFC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/3/32/Bradford_City_AFC.png",
+         "playedGames": 44,
+         "points": 75,
+         "goals": 58,
+         "goalsAgainst": 42,
+         "goalDifference": 16,
+         "wins": 19,
+         "draws": 18,
+         "losses": 7,
+         "home": {
+            "goals": 33,
+            "goalsAgainst": 17,
+            "wins": 10,
+            "draws": 12,
+            "losses": 0
+         },
+         "away": {
+            "goals": 25,
+            "goalsAgainst": 25,
+            "wins": 9,
+            "draws": 6,
+            "losses": 7
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/384"
+            }
+         },
+         "position": 6,
+         "teamName": "Millwall FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/7/71/Millwall_FC_logo.png",
+         "playedGames": 44,
+         "points": 70,
+         "goals": 62,
+         "goalsAgainst": 51,
+         "goalDifference": 11,
+         "wins": 19,
+         "draws": 13,
+         "losses": 12,
+         "home": {
+            "goals": 34,
+            "goalsAgainst": 14,
+            "wins": 13,
+            "draws": 6,
+            "losses": 3
+         },
+         "away": {
+            "goals": 28,
+            "goalsAgainst": 37,
+            "wins": 6,
+            "draws": 7,
+            "losses": 9
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1069"
+            }
+         },
+         "position": 7,
+         "teamName": "Southend United FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/7/79/Southend_United.svg",
+         "playedGames": 44,
+         "points": 69,
+         "goals": 69,
+         "goalsAgainst": 52,
+         "goalDifference": 17,
+         "wins": 19,
+         "draws": 12,
+         "losses": 13,
+         "home": {
+            "goals": 38,
+            "goalsAgainst": 27,
+            "wins": 10,
+            "draws": 7,
+            "losses": 5
+         },
+         "away": {
+            "goals": 31,
+            "goalsAgainst": 25,
+            "wins": 9,
+            "draws": 5,
+            "losses": 8
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/361"
+            }
+         },
+         "position": 8,
+         "teamName": "Rochdale AFC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/d/d5/Rochdale_badge.png",
+         "playedGames": 44,
+         "points": 67,
+         "goals": 69,
+         "goalsAgainst": 60,
+         "goalDifference": 9,
+         "wins": 19,
+         "draws": 10,
+         "losses": 15,
+         "home": {
+            "goals": 47,
+            "goalsAgainst": 24,
+            "wins": 13,
+            "draws": 6,
+            "losses": 3
+         },
+         "away": {
+            "goals": 22,
+            "goalsAgainst": 36,
+            "wins": 6,
+            "draws": 4,
+            "losses": 12
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/400"
+            }
+         },
+         "position": 9,
+         "teamName": "Bristol Rovers",
+         "crestURI": null,
+         "playedGames": 44,
+         "points": 66,
+         "goals": 63,
+         "goalsAgainst": 62,
+         "goalDifference": 1,
+         "wins": 18,
+         "draws": 12,
+         "losses": 14,
+         "home": {
+            "goals": 39,
+            "goalsAgainst": 22,
+            "wins": 13,
+            "draws": 6,
+            "losses": 3
+         },
+         "away": {
+            "goals": 24,
+            "goalsAgainst": 40,
+            "wins": 5,
+            "draws": 6,
+            "losses": 11
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1082"
+            }
+         },
+         "position": 10,
+         "teamName": "Oxford United",
+         "crestURI": null,
+         "playedGames": 44,
+         "points": 63,
+         "goals": 60,
+         "goalsAgainst": 52,
+         "goalDifference": 8,
+         "wins": 18,
+         "draws": 9,
+         "losses": 17,
+         "home": {
+            "goals": 31,
+            "goalsAgainst": 27,
+            "wins": 10,
+            "draws": 4,
+            "losses": 8
+         },
+         "away": {
+            "goals": 29,
+            "goalsAgainst": 25,
+            "wins": 8,
+            "draws": 5,
+            "losses": 9
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1077"
+            }
+         },
+         "position": 11,
+         "teamName": "Peterborough United FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/d/d4/Peterborough_United.svg",
+         "playedGames": 44,
+         "points": 59,
+         "goals": 58,
+         "goalsAgainst": 57,
+         "goalDifference": 1,
+         "wins": 16,
+         "draws": 11,
+         "losses": 17,
+         "home": {
+            "goals": 35,
+            "goalsAgainst": 31,
+            "wins": 8,
+            "draws": 6,
+            "losses": 8
+         },
+         "away": {
+            "goals": 23,
+            "goalsAgainst": 26,
+            "wins": 8,
+            "draws": 5,
+            "losses": 9
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/409"
+            }
+         },
+         "position": 12,
+         "teamName": "Milton Keynes Dons",
+         "crestURI": null,
+         "playedGames": 44,
+         "points": 58,
+         "goals": 56,
+         "goalsAgainst": 54,
+         "goalDifference": 2,
+         "wins": 15,
+         "draws": 13,
+         "losses": 16,
+         "home": {
+            "goals": 29,
+            "goalsAgainst": 34,
+            "wins": 7,
+            "draws": 6,
+            "losses": 9
+         },
+         "away": {
+            "goals": 27,
+            "goalsAgainst": 20,
+            "wins": 8,
+            "draws": 7,
+            "losses": 7
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/369"
+            }
+         },
+         "position": 13,
+         "teamName": "Walsall FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/e/ef/Walsall_FC.svg",
+         "playedGames": 43,
+         "points": 58,
+         "goals": 50,
+         "goalsAgainst": 52,
+         "goalDifference": -2,
+         "wins": 14,
+         "draws": 16,
+         "losses": 13,
+         "home": {
+            "goals": 33,
+            "goalsAgainst": 24,
+            "wins": 11,
+            "draws": 5,
+            "losses": 5
+         },
+         "away": {
+            "goals": 17,
+            "goalsAgainst": 28,
+            "wins": 3,
+            "draws": 11,
+            "losses": 8
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/347"
+            }
+         },
+         "position": 14,
+         "teamName": "AFC Wimbledon",
+         "crestURI": null,
+         "playedGames": 44,
+         "points": 56,
+         "goals": 52,
+         "goalsAgainst": 52,
+         "goalDifference": 0,
+         "wins": 13,
+         "draws": 17,
+         "losses": 14,
+         "home": {
+            "goals": 34,
+            "goalsAgainst": 25,
+            "wins": 8,
+            "draws": 7,
+            "losses": 7
+         },
+         "away": {
+            "goals": 18,
+            "goalsAgainst": 27,
+            "wins": 5,
+            "draws": 10,
+            "losses": 7
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/348"
+            }
+         },
+         "position": 15,
+         "teamName": "Charlton Athletic",
+         "crestURI": null,
+         "playedGames": 44,
+         "points": 54,
+         "goals": 55,
+         "goalsAgainst": 52,
+         "goalDifference": 3,
+         "wins": 12,
+         "draws": 18,
+         "losses": 14,
+         "home": {
+            "goals": 28,
+            "goalsAgainst": 19,
+            "wins": 8,
+            "draws": 8,
+            "losses": 6
+         },
+         "away": {
+            "goals": 27,
+            "goalsAgainst": 33,
+            "wins": 4,
+            "draws": 10,
+            "losses": 8
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/376"
+            }
+         },
+         "position": 16,
+         "teamName": "Northampton Town",
+         "crestURI": null,
+         "playedGames": 44,
+         "points": 52,
+         "goals": 60,
+         "goalsAgainst": 70,
+         "goalDifference": -10,
+         "wins": 14,
+         "draws": 10,
+         "losses": 20,
+         "home": {
+            "goals": 35,
+            "goalsAgainst": 29,
+            "wins": 9,
+            "draws": 4,
+            "losses": 9
+         },
+         "away": {
+            "goals": 25,
+            "goalsAgainst": 41,
+            "wins": 5,
+            "draws": 6,
+            "losses": 11
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1075"
+            }
+         },
+         "position": 17,
+         "teamName": "Oldham Athletic AFC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/2/21/Oldham_Athletic_new_badge.png",
+         "playedGames": 44,
+         "points": 51,
+         "goals": 30,
+         "goalsAgainst": 43,
+         "goalDifference": -13,
+         "wins": 12,
+         "draws": 15,
+         "losses": 17,
+         "home": {
+            "goals": 18,
+            "goalsAgainst": 17,
+            "wins": 8,
+            "draws": 8,
+            "losses": 6
+         },
+         "away": {
+            "goals": 12,
+            "goalsAgainst": 26,
+            "wins": 4,
+            "draws": 7,
+            "losses": 11
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/370"
+            }
+         },
+         "position": 18,
+         "teamName": "Gillingham FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/FC_Gillingham_Logo.svg/788px-FC_Gillingham_Logo.svg.png",
+         "playedGames": 44,
+         "points": 49,
+         "goals": 57,
+         "goalsAgainst": 76,
+         "goalDifference": -19,
+         "wins": 12,
+         "draws": 13,
+         "losses": 19,
+         "home": {
+            "goals": 30,
+            "goalsAgainst": 27,
+            "wins": 8,
+            "draws": 9,
+            "losses": 5
+         },
+         "away": {
+            "goals": 27,
+            "goalsAgainst": 49,
+            "wins": 4,
+            "draws": 4,
+            "losses": 14
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1080"
+            }
+         },
+         "position": 19,
+         "teamName": "Shrewsbury Town FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/1/1b/Shrewsbury_Town_Badge_2015-.jpg",
+         "playedGames": 44,
+         "points": 48,
+         "goals": 45,
+         "goalsAgainst": 61,
+         "goalDifference": -16,
+         "wins": 12,
+         "draws": 12,
+         "losses": 20,
+         "home": {
+            "goals": 25,
+            "goalsAgainst": 26,
+            "wins": 9,
+            "draws": 5,
+            "losses": 8
+         },
+         "away": {
+            "goals": 20,
+            "goalsAgainst": 35,
+            "wins": 3,
+            "draws": 7,
+            "losses": 12
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1068"
+            }
+         },
+         "position": 20,
+         "teamName": "Bury FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/b/b7/Bury_FC.svg",
+         "playedGames": 44,
+         "points": 47,
+         "goals": 58,
+         "goalsAgainst": 72,
+         "goalDifference": -14,
+         "wins": 12,
+         "draws": 11,
+         "losses": 21,
+         "home": {
+            "goals": 33,
+            "goalsAgainst": 33,
+            "wins": 8,
+            "draws": 3,
+            "losses": 11
+         },
+         "away": {
+            "goals": 25,
+            "goalsAgainst": 39,
+            "wins": 4,
+            "draws": 8,
+            "losses": 10
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/393"
+            }
+         },
+         "position": 21,
+         "teamName": "Port Vale FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/5/5f/Port_Vale_logo.svg",
+         "playedGames": 43,
+         "points": 45,
+         "goals": 44,
+         "goalsAgainst": 68,
+         "goalDifference": -24,
+         "wins": 11,
+         "draws": 12,
+         "losses": 20,
+         "home": {
+            "goals": 32,
+            "goalsAgainst": 29,
+            "wins": 10,
+            "draws": 6,
+            "losses": 6
+         },
+         "away": {
+            "goals": 12,
+            "goalsAgainst": 39,
+            "wins": 1,
+            "draws": 6,
+            "losses": 14
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1079"
+            }
+         },
+         "position": 22,
+         "teamName": "Swindon Town FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/a/a3/Swindon_Town_FC.svg",
+         "playedGames": 44,
+         "points": 44,
+         "goals": 43,
+         "goalsAgainst": 61,
+         "goalDifference": -18,
+         "wins": 11,
+         "draws": 11,
+         "losses": 22,
+         "home": {
+            "goals": 22,
+            "goalsAgainst": 22,
+            "wins": 7,
+            "draws": 6,
+            "losses": 9
+         },
+         "away": {
+            "goals": 21,
+            "goalsAgainst": 39,
+            "wins": 4,
+            "draws": 5,
+            "losses": 13
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/363"
+            }
+         },
+         "position": 23,
+         "teamName": "Chesterfield FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/9/94/Chesterfield_FC_crest.svg",
+         "playedGames": 44,
+         "points": 37,
+         "goals": 40,
+         "goalsAgainst": 73,
+         "goalDifference": -33,
+         "wins": 9,
+         "draws": 10,
+         "losses": 25,
+         "home": {
+            "goals": 25,
+            "goalsAgainst": 37,
+            "wins": 7,
+            "draws": 5,
+            "losses": 10
+         },
+         "away": {
+            "goals": 15,
+            "goalsAgainst": 36,
+            "wins": 2,
+            "draws": 5,
+            "losses": 15
+         }
+      },
+      {
+         "_links": {
+            "team": {
+               "href": "http://api.football-data.org/v1/teams/1076"
+            }
+         },
+         "position": 24,
+         "teamName": "Coventry City FC",
+         "crestURI": "https://upload.wikimedia.org/wikipedia/en/9/94/Coventry_City_FC_logo.svg",
+         "playedGames": 44,
+         "points": 36,
+         "goals": 35,
+         "goalsAgainst": 65,
+         "goalDifference": -30,
+         "wins": 8,
+         "draws": 12,
+         "losses": 24,
+         "home": {
+            "goals": 21,
+            "goalsAgainst": 24,
+            "wins": 7,
+            "draws": 7,
+            "losses": 8
+         },
+         "away": {
+            "goals": 14,
+            "goalsAgainst": 41,
+            "wins": 1,
+            "draws": 5,
+            "losses": 16
+         }
+      }
+   ]
+}
