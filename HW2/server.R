@@ -2,7 +2,6 @@ library(plotly)
 library(jsonlite)
 library(dplyr)
 table_url = ""
-fbd = TRUE
 leagueInput <- function(x) {
   if (x == "Premier League") {
     table_url = "leaguetable/premier_league.json"
@@ -19,17 +18,23 @@ leagueInput <- function(x) {
   if (x == "Serie B") {
     table_url = "leaguetable/ita_serieb.json"
   }
-  if (x == "Primera Division"){
+  if (x == "Primera Division") {
     table_url = "leaguetable/spain_primera_division.json"
   }
-  if (x == "Liga Adelante"){
+  if (x == "Liga Adelante") {
     table_url = "leaguetable/spain_adelante.json"
   }
-  if (x == "1st Bundesliga"){
+  if (x == "1st Bundesliga") {
     table_url = "leaguetable/bundesliga_1.json"
   }
-  if (x == "2nd Bundesliga"){
+  if (x == "2nd Bundesliga") {
     table_url = "leaguetable/bundesliga_2.json"
+  }
+  if (x == "Ligue 1") {
+    table_url = "leaguetable/france_ligue_1.json"
+  }
+  if (x == "Ligue 2") {
+    table_url = "leaguetable/france_ligue_2.json"
   }
   return(table_url)
 }
@@ -50,9 +55,6 @@ server <- function(input, output) {
       G = table_data$goalDifference,
       Pts = table_data$points
     )
-    
-    
-    
     data <- table_df
     data
   }))
@@ -141,12 +143,11 @@ server <- function(input, output) {
           )
         )
     }
-    
     p
   })
   output$topscorertable <- DT::renderDataTable(DT::datatable({
     # xx = leagueInput(input$league)
-    table_data_ori = fromJSON("ita_topscorers.json")
+    table_data_ori = fromJSON("topscorers/ita_topscorers.json")
     
     table_data = table_data_ori$data$topscorers
     table_df = data.frame(
@@ -158,8 +159,6 @@ server <- function(input, output) {
       Goals = table_data$goals
       
     )
-    
-    
     data <- table_df
     data
   }))

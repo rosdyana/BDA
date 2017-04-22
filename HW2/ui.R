@@ -1,6 +1,7 @@
 library(shiny)
 library(shinydashboard)
 library(plotly)
+
 options(shiny.sanitize.errors = TRUE)
 ui <- dashboardPage(
   skin = "red",
@@ -20,12 +21,7 @@ ui <- dashboardPage(
                     icon = icon('table')),
         menuSubItem('Leagues Map',
                     tabName = 'leagueMap',
-                    icon = icon('map')),
-        menuSubItem(
-          'Leagues Profile',
-          tabName = 'leagueProfile',
-          icon = icon('address-book')
-        )
+                    icon = icon('map'))
       ),
       menuItem("Top Scorers", tabName = "top_scorer_ranks", icon = icon("male")),
       menuItem("Team Profile", tabName = "team_profile", icon = icon("shield")),
@@ -50,11 +46,12 @@ ui <- dashboardPage(
       tabItem(tabName = "league_table",
               fluidPage(
                 box(
-                  title = "League Table",
+                  title =   tagList(shiny::icon("table") , "League Table"),
                   width = NULL,
                   status = "primary",
                   solidHeader = TRUE,
                   collapsible = TRUE,
+                  icon = icon("flag/it.svg"),
                   selectInput(
                     "league",
                     "Select league",
@@ -62,9 +59,11 @@ ui <- dashboardPage(
                       "England" = c("Premier League", "Championship", "League One"),
                       "Italy" = c("Serie A", "Serie B"),
                       "Spain" = c("Primera Division", "Liga Adelante"),
-                      "Germany" = c("1st Bundesliga","2nd Bundesliga")
+                      "Germany" = c("1st Bundesliga", "2nd Bundesliga"),
+                      "France" = c("Ligue 1", "Ligue 2")
                     )
                   ),
+                  
                   DT::dataTableOutput("table")
                 ),
                 box(
@@ -108,6 +107,8 @@ ui <- dashboardPage(
       
       tabItem(tabName = "settings",
               h2("Settings content")),
+      tabItem(tabName = "leagueMap",
+              h2("leagueMap content")),
       tabItem(
         tabName = "team_profile",
         selectizeInput(
