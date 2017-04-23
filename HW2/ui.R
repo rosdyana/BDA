@@ -46,7 +46,7 @@ ui <- dashboardPage(
         }
         '
       )
-      )),
+    )),
     tabItems(
       # First tab content
       tabItem(tabName = "league_table",
@@ -111,15 +111,55 @@ ui <- dashboardPage(
                   )
                 )
               )),
-      tabItem(
-        tabName = "team_profile",
-        selectizeInput(
-          'teamProfile',
-          'Select Team',
-          choices = c("Juventus", "Barcelona"),
-          multiple = FALSE
-        )
-      ),
+      tabItem(tabName = "team_profile",
+              fluidPage(
+                box(
+                  title = tagList(shiny::icon("shield") , "Team Profile"),
+                  width = NULL,
+                  status = "primary",
+                  solidHeader = TRUE,
+                  collapsible = TRUE,
+                  selectizeInput(
+                    'teamProfile',
+                    'Select Team',
+                    choices = c("Juventus"),
+                    multiple = FALSE
+                  ),
+                  htmlOutput("teamProfileContent")
+                ),
+                tabBox(
+                  # Title can include an icon
+                  title = "",
+                  width = NULL,
+                  tabPanel(
+                    tagList(shiny::icon("users") , "Players"),
+                    selectizeInput(
+                      'playerpositionselect',
+                      'Select Position',
+                      choices = c(
+                        "ALL",
+                        "Keeper",
+                        "Centre-Back",
+                        "Left-Back",
+                        "Right-Back",
+                        "Defensive Midfield",
+                        "Central Midfield",
+                        "Right Midfield",
+                        "Left Wing",
+                        "Right Wing",
+                        "Centre-Forward"
+                      ),
+                      multiple = FALSE
+                    ),
+                    
+                    DT::dataTableOutput("playertable")
+                  ),
+                  tabPanel(
+                    tagList(shiny::icon("calendar") , "Fixtures"),
+                    DT::dataTableOutput("teamfixtures")
+                  )
+                )
+              )),
       tabItem(tabName = "top_scorer_ranks",
               fluidPage(
                 box(
@@ -144,5 +184,5 @@ ui <- dashboardPage(
                 )
               ))
     )
-      )
-    )
+  )
+)

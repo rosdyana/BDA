@@ -2,10 +2,12 @@ library(plotly)
 library(jsonlite)
 library(dplyr)
 library(leaflet)
+library(eeptools)
 
 # league table data
 table_url = ""
 mapfile = ""
+
 leagueInput <- function(x) {
   if (x == "Premier League") {
     table_url = "leaguetable/premier_league.json"
@@ -204,7 +206,8 @@ server <- function(input, output) {
       title = span(tagList(icon("info-circle"), "About")),
       tags$div(
         HTML(
-          "<p>Developer : Rosdyana Kusuma</br>Email : <a href=mailto:rosdyana.kusuma@gmail.com>rosdyana.kusuma@gmail.com</a></p>",
+          "<img src='https://avatars1.githubusercontent.com/u/4516635?v=3&s=460' width=150><br/><br/>",
+          "<p>Developer : Rosdyana Kusuma</br>Email : <a href=mailto:rosdyana.kusuma@gmail.com>rosdyana.kusuma@gmail.com</a></br>linkedin : <a href='https://www.linkedin.com/in/rosdyanakusuma/' target=blank>Open me</a></p>",
           "<iframe src='https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Frosdyana.shinyapps.io%2FSoccerLeague%2F&layout=box_count&size=small&mobile_iframe=true&width=61&height=40&appId' width='61' height='40' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>"
         )
       ),
@@ -253,4 +256,57 @@ server <- function(input, output) {
     m
     
   })
+  output$teamProfileContent <- renderUI({
+    clubProfile <- fromJSON("teams/juventus/profile.json")
+    
+    str0 <-
+      paste("<img src='",
+            clubProfile$crestUrl,
+            "' width=50'<br/><br/>")
+    str1 <- paste("Team : ", clubProfile$name, "<br/>")
+    str2 <-
+      paste("Market Value : ", clubProfile$squadMarketValue, "<br/>")
+    HTML(paste(str0, str1, str2))
+  })
+  
+  
+  output$playertable <- DT::renderDataTable(DT::datatable({
+    clubPlayers <- fromJSON("teams/juventus/players.json")
+    
+    table_data = clubPlayers$players
+    table_df = data.frame(
+      Name = table_data$name,
+      Nationality = table_data$nationality,
+      Age = floor(age_calc(
+        dob = as.Date(table_data$dateOfBirth),
+        enddate = Sys.Date(),
+        units = "years"
+      )),
+      Position = table_data$position,
+      Number = table_data$jerseyNumber
+    )
+    if (input$playerpositionselect != "ALL") {
+      table_df <-
+        table_df %>% select(Name, Nationality, Age, Position, Number) %>% filter(Position == input$playerpositionselect)
+    }
+    data <- table_df
+  }))
+  
+  output$teamfixtures <- DT::renderDataTable(DT::datatable({
+    clubFixtures <- fromJSON("teams/juventus/fixtures.json")
+    
+    table_data = clubFixtures$fixtures
+    table_df = data.frame(
+      Date = substring(table_data$date, 1, 10),
+      Home = table_data$homeTeamName,
+      Away = table_data$awayTeamName,
+      Result = paste(
+        table_data$result$goalsHomeTeam,
+        "-",
+        table_data$result$goalsAwayTeam
+      )
+    )
+    
+    data <- table_df
+  }))
 }
