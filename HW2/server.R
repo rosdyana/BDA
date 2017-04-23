@@ -1,7 +1,11 @@
 library(plotly)
 library(jsonlite)
 library(dplyr)
+library(leaflet)
+
+# league table data
 table_url = ""
+mapfile = ""
 leagueInput <- function(x) {
   if (x == "Premier League") {
     table_url = "leaguetable/premier_league.json"
@@ -38,6 +42,11 @@ leagueInput <- function(x) {
   }
   return(table_url)
 }
+
+# top scorers data
+
+# team profile data
+
 server <- function(input, output) {
   output$table <- DT::renderDataTable(DT::datatable({
     xx = leagueInput(input$league)
@@ -56,7 +65,6 @@ server <- function(input, output) {
       Pts = table_data$points
     )
     data <- table_df
-    data
   }))
   
   output$homestatsplot <- renderPlotly({
@@ -99,7 +107,6 @@ server <- function(input, output) {
           )
         )
     }
-    p
   })
   
   output$awaystatsplot <- renderPlotly({
@@ -143,7 +150,6 @@ server <- function(input, output) {
           )
         )
     }
-    p
   })
   output$topscorertable <- DT::renderDataTable(DT::datatable({
     # xx = leagueInput(input$league)
@@ -160,6 +166,91 @@ server <- function(input, output) {
       
     )
     data <- table_df
-    data
   }))
+  
+  output$topscorerplot <- renderPlotly({
+    table_data_ori = fromJSON("topscorers/ita_topscorers.json")
+    df = data.frame(
+      Name = table_data_ori$data$topscorers$fullname,
+      Goals = table_data_ori$data$topscorers$goals
+    )
+    df[, c("Name", "Goals")]
+    newdf <- df %>% select(Name, Goals) %>% filter(Goals == input$n)
+    p <-
+      plot_ly(
+        newdf,
+        labels = ~ Name,
+        values = ~ Goals,
+        type = 'pie',
+        showlegend = FALSE
+      ) %>%
+      layout(
+        title = '',
+        xaxis = list(
+          showgrid = FALSE,
+          zeroline = FALSE,
+          showticklabels = FALSE
+        ),
+        yaxis = list(
+          showgrid = FALSE,
+          zeroline = FALSE,
+          showticklabels = FALSE
+        )
+      )
+  })
+  
+  observeEvent(input$about, {
+    showModal(modalDialog(
+      title = span(tagList(icon("info-circle"), "About")),
+      tags$div(
+        HTML(
+          "<p>Developer : Rosdyana Kusuma</br>Email : <a href=mailto:rosdyana.kusuma@gmail.com>rosdyana.kusuma@gmail.com</a></p>",
+          "<iframe src='https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Frosdyana.shinyapps.io%2FSoccerLeague%2F&layout=box_count&size=small&mobile_iframe=true&width=61&height=40&appId' width='61' height='40' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>"
+        )
+      ),
+      easyClose = TRUE
+    ))
+  })
+  leagueMapInput <- function(x) {
+    if (x == "Serie A") {
+      mapfile = "leaguemaps/seriea_map.csv"
+    }
+    if (x == "Serie B") {
+      mapfile = "leaguemaps/serieb_map.csv"
+    }
+    if (x == "Premier League") {
+      mapfile = "leaguemaps/england_premiership_map.csv"
+    }
+    return(mapfile)
+  }
+  output$leaguemapoutput <- renderLeaflet({
+    xx = leagueMapInput(input$leaguemapselect)
+    mapdata <- read.csv(xx)
+    UserIcon <- makeIcon(iconUrl = mapdata$logo,
+                         iconWidth = 20)
+    content <- paste(
+      "<b>",
+      mapdata$team,
+      "</b><br/>",
+      "Stadium name :",
+      mapdata$stadium_name,
+      "<br/>",
+      "City :",
+      mapdata$city,
+      "<br/>",
+      "Capacity :",
+      mapdata$capacity
+    )
+    m = leaflet()
+    m = addTiles(m)
+    m = addMarkers(
+      m,
+      lng = mapdata$lng,
+      lat = mapdata$lat,
+      popup = content,
+      icon = UserIcon
+    )
+    m
+    
+  })
 }

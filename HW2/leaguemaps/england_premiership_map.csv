@@ -1,0 +1,16 @@
+team,stadium_name,city,capacity,lat,lng,logo
+Liverpool FC,Anfield,Liverpool,54074,53.430874, -2.960851,https://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg
+Stoke City,bet365 Stadium,Stoke On Trent,27740,52.988093, -2.176666,https://upload.wikimedia.org/wikipedia/de/a/a3/Stoke_City.svg
+Arsenal FC,Emirates Stadium,London,60362,51.555140, -0.108459,https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg
+Manchester City,Etihad Stadium,	Manchester,55097,53.483138, -2.200460,https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg
+Everton FC,Goodison Park,Liverpool,40157,53.438761, -2.966330,https://upload.wikimedia.org/wikipedia/de/f/f9/Everton_FC.svg
+Leicester City,King Power Stadium,Leicester,32500,52.620389, -1.142214,https://upload.wikimedia.org/wikipedia/en/6/63/Leicester02.png
+Hull City,Kingston Communications Stadium,Kingston upon Hull,25586,53.746341, -0.367804,https://upload.wikimedia.org/wikipedia/de/a/a9/Hull_City_AFC.svg
+Swansea City,Liberty Stadium,Swansea,20750,51.642743, -3.934639,https://upload.wikimedia.org/wikipedia/de/a/ab/Swansea_City_Logo.svg
+West Ham United,London Stadium,London,60000,51.538667, -0.016514,https://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg
+Manchester United,Old Trafford,Manchester,75731,53.463040, -2.291372,https://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg
+Middlesbrough FC,Riverside,Middlesbrough,35100,54.578217, -1.216867,https://upload.wikimedia.org/wikipedia/en/2/2c/Middlesbrough_FC_crest.svg
+Southampton FC,Saint Mary's,Southampton,32689,50.905801, -1.390943,https://upload.wikimedia.org/wikipedia/de/c/c9/FC_Southampton.svg
+Crystal Palace,Selhurst Park,London,26255,51.398272, -0.085379,https://upload.wikimedia.org/wikipedia/de/b/bf/Crystal_Palace_F.C._logo_(2013).png
+Sunderland AFC,Stadium of Light,Sunderland,49000,54.914493, -1.388478,https://upload.wikimedia.org/wikipedia/de/6/60/AFC_Sunderland.svg
+Chelsea FC,Stamford Bridge,London,41837,51.481690, -0.190978,https://upload.wikimedia.org/wikipedia/de/5/5c/Chelsea_crest.svg

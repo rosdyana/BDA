@@ -1,0 +1,21 @@
+team,stadium_name,city,capacity,lat,lng,logo
+ACF Fiorentina,Artemio Franchi,Firenze,47284,43.780599,11.282304,https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/ACF_Fiorentina_2.svg/240px-ACF_Fiorentina_2.svg.png
+Atalanta BC,Atleti Azzurri d'Italia,Bergamo,26562,45.709103,9.680652,http://upload.wikimedia.org/wikipedia/de/2/28/Atalanta_BC.svg
+Empoli FC,Carlo Castellani,Empoli,19847,43.726690,10.954802,http://upload.wikimedia.org/wikipedia/de/4/42/Logo_FC_Empoli.svg
+Udinese Calcio,Dacia Arena,Udine,25144,46.081332,13.199837,http://upload.wikimedia.org/wikipedia/de/b/b1/Udinese_Calcio.svg
+FC Crotone,Ezio Scida,Crotone,16547,39.079288,17.116440,http://upload.wikimedia.org/wikipedia/de/a/ab/FC_Crotone.svg
+AC Milan,Giuseppe Meazza,Milano,80018,45.477642,9.123598,http://upload.wikimedia.org/wikipedia/de/9/9e/AC_Mailand_Logo.svg
+Inter,San Siro,Milano,80018,45.478462,9.124381,https://upload.wikimedia.org/wikipedia/it/7/7e/Logo_FC_Internazionale_Milano_2014.png
+Juventus,Juventus Stadium,Turin,41254,45.109508,7.640932,http://upload.wikimedia.org/wikipedia/de/d/d2/Juventus_Turin.svg
+Genoa CFC,Luigi Ferraris,Genova,36603,44.417149, 8.951901,https://upload.wikimedia.org/wikipedia/de/7/76/Genoa_CFC.svg
+Sampdoria,Luigi Ferraris,Genova,36603,44.415954, 8.953135,https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Sampdoria_badge.png/225px-Sampdoria_badge.png
+Sassuolo Calcio,Mapei Stadium,Reggio Emilia,20084,44.714457, 10.649496,https://upload.wikimedia.org/wikipedia/de/a/a3/US_Sassuolo_Calcio.svg
+Chievo Verona,Marc Antonio Bentegodi,Verona,39211,45.435213, 10.968364,https://upload.wikimedia.org/wikipedia/de/3/3f/AC_Chievo_Verona.svg
+Torino FC,Olimpico,Turin,25370,45.041907, 7.649730,https://upload.wikimedia.org/wikipedia/de/2/2e/Torino_FC_Logo.svg
+AS Roma,Olimpico,Roma,72698,41.935154, 12.454135,https://upload.wikimedia.org/wikipedia/de/3/32/AS_Rom.svg
+SS Lazio,Olimpico,Roma,72698,41.932712, 12.455079,http://upload.wikimedia.org/wikipedia/de/thumb/4/47/Lazio_Rom.svg/500px-Lazio_Rom.svg.png
+Bologna FC,Renato Dall'Ara,Bologna,36375,44.492680, 11.309728,https://upload.wikimedia.org/wikipedia/de/9/92/FC_Bologna.svg
+US Palermo,Renzo Barbera,Palermo,37000,38.152818, 13.342048,https://upload.wikimedia.org/wikipedia/de/7/7f/US_Palermo.svg
+SSC Napoli,San Paolo,Napoli,60240,40.828107, 14.192643,https://upload.wikimedia.org/wikipedia/commons/2/28/S.S.C._Napoli_logo.svg
+Cagliari Calcio,Sant'Elia,Cagliari,23486,39.199613, 9.134732,https://upload.wikimedia.org/wikipedia/de/3/3d/Cagliari_Calcio.svg
+Pescara Calcio,Stadio Adriatico,Pescara,20515,42.455312, 14.229301,https://upload.wikimedia.org/wikipedia/de/f/ff/Pescara_Calcio.svg

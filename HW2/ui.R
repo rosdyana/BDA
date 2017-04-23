@@ -1,6 +1,7 @@
 library(shiny)
 library(shinydashboard)
 library(plotly)
+library(leaflet)
 
 options(shiny.sanitize.errors = TRUE)
 ui <- dashboardPage(
@@ -25,8 +26,13 @@ ui <- dashboardPage(
       ),
       menuItem("Top Scorers", tabName = "top_scorer_ranks", icon = icon("male")),
       menuItem("Team Profile", tabName = "team_profile", icon = icon("shield")),
-      menuItem("Settings", tabName = "settings", icon = icon("cog")),
-      menuItem("About", tabName = "about", icon = icon("info-circle"))
+      actionButton("about", "About", icon = icon("info-circle")),
+      actionButton(
+        "github",
+        "Github",
+        icon = icon("github"),
+        onclick = "window.open('https://github.com/rosdyana/BDA/tree/master/HW2', '_blank')"
+      )
     )
   ),
   dashboardBody(
@@ -40,7 +46,7 @@ ui <- dashboardPage(
         }
         '
       )
-    )),
+      )),
     tabItems(
       # First tab content
       tabItem(tabName = "league_table",
@@ -51,7 +57,6 @@ ui <- dashboardPage(
                   status = "primary",
                   solidHeader = TRUE,
                   collapsible = TRUE,
-                  icon = icon("flag/it.svg"),
                   selectInput(
                     "league",
                     "Select league",
@@ -87,28 +92,25 @@ ui <- dashboardPage(
                   plotlyOutput("awaystatsplot")
                 )
               )),
-      
-      tabItem(
-        tabName = "about",
-        box(
-          title = "About",
-          status = "info",
-          width = NULL,
-          solidHeader = TRUE,
-          collapsible = TRUE,
-          tags$div(
-            HTML(
-              "<p>Developer : Rosdyana Kusuma</br>Email : <a href=mailto:rosdyana.kusuma@gmail.com>rosdyana.kusuma@gmail.com</a></p>",
-              "<iframe src='https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Frosdyana.shinyapps.io%2FSoccerLeague%2F&layout=box_count&size=small&mobile_iframe=true&width=61&height=40&appId' width='61' height='40' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>"
-            )
-          )
-        )
-      ),
-      
-      tabItem(tabName = "settings",
-              h2("Settings content")),
       tabItem(tabName = "leagueMap",
-              h2("leagueMap content")),
+              fluidPage(
+                box(
+                  title = tagList(shiny::icon("map") , "League Map"),
+                  width = NULL,
+                  status = "primary",
+                  solidHeader = TRUE,
+                  collapsible = TRUE,
+                  leafletOutput("leaguemapoutput"),
+                  selectInput(
+                    "leaguemapselect",
+                    "Select league",
+                    list(
+                      "England" = c("Premier League", "Championship"),
+                      "Italy" = c("Serie A", "Serie B")
+                    )
+                  )
+                )
+              )),
       tabItem(
         tabName = "team_profile",
         selectizeInput(
@@ -121,23 +123,26 @@ ui <- dashboardPage(
       tabItem(tabName = "top_scorer_ranks",
               fluidPage(
                 box(
-                  title = "Top Scorers Table",
+                  title = tagList(shiny::icon("male") , "Top Scorers Table"),
                   width = NULL,
                   status = "primary",
                   solidHeader = TRUE,
                   collapsible = TRUE,
-                  selectInput(
-                    "league",
-                    "Select league",
-                    list(
-                      "England" = c("Premier League", "Championship", "League One"),
-                      "Italy" = c("Serie A", "Serie B"),
-                      "Spain" = c("Primera Division", "Liga Adelante")
-                    )
-                  ),
-                  DT::dataTableOutput("topscorertable")
+                  selectInput("league",
+                              "Select league",
+                              list("Italy" = c("Serie A", "Serie B"))),
+                  DT::dataTableOutput("topscorertable"),
+                  plotlyOutput("topscorerplot"),
+                  sliderInput(
+                    "n",
+                    "Number of goals:",
+                    min = 1,
+                    max = 30,
+                    value = 5,
+                    step = 1
+                  )
                 )
               ))
     )
-  )
-)
+      )
+    )
