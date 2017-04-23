@@ -11,6 +11,8 @@ The idea come from my favorite sport ever, "football" or in the other side they 
 - Team stadium map in one league
 - Compare team statistic
 - Deploy to hosting
+- Maintenance offline data each week
+- build own RestFul API
 - etc
 
 ### Live
