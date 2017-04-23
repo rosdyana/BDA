@@ -224,6 +224,9 @@ server <- function(input, output) {
     if (x == "Premier League") {
       mapfile = "leaguemaps/england_premiership_map.csv"
     }
+    if (x == "Championship") {
+      mapfile = "leaguemaps/championship_map.csv"
+    }
     return(mapfile)
   }
   output$leaguemapoutput <- renderLeaflet({
@@ -256,22 +259,36 @@ server <- function(input, output) {
     m
     
   })
+  
+  
   output$teamProfileContent <- renderUI({
-    clubProfile <- fromJSON("teams/juventus/profile.json")
-    
+    dt1 <- data.frame(fromJSON("teams/juve_profile.json"))
+    dt2 <- data.frame(fromJSON("teams/barca_profile.json"))
+    profiles <- merge(dt1, dt2, all = T)
+    if (input$teamProfile == "Juventus") {
+      profiles <- profiles[1, ]
+    }
+    if (input$teamProfile == "Barcelona") {
+      profiles <- profiles[2, ]
+    }
     str0 <-
       paste("<img src='",
-            clubProfile$crestUrl,
+            profiles$crestUrl,
             "' width=50'<br/><br/>")
-    str1 <- paste("Team : ", clubProfile$name, "<br/>")
+    str1 <- paste("Team : ", profiles$name, "<br/>")
     str2 <-
-      paste("Market Value : ", clubProfile$squadMarketValue, "<br/>")
+      paste("Market Value : ", profiles$squadMarketValue, "<br/>")
     HTML(paste(str0, str1, str2))
   })
   
   
   output$playertable <- DT::renderDataTable(DT::datatable({
-    clubPlayers <- fromJSON("teams/juventus/players.json")
+    if (input$teamProfile == "Juventus") {
+      clubPlayers <- fromJSON("teams/juve_players.json")
+    }
+    if (input$teamProfile == "Barcelona") {
+      clubPlayers <- fromJSON("teams/barca_players.json")
+    }
     
     table_data = clubPlayers$players
     table_df = data.frame(
@@ -293,8 +310,12 @@ server <- function(input, output) {
   }))
   
   output$teamfixtures <- DT::renderDataTable(DT::datatable({
-    clubFixtures <- fromJSON("teams/juventus/fixtures.json")
-    
+    if (input$teamProfile == "Juventus") {
+      clubFixtures <-  fromJSON("teams/juve_fixtures.json")
+    }
+    if (input$teamProfile == "Barcelona") {
+      clubFixtures <- fromJSON("teams/barca_fixtures.json")
+    }
     table_data = clubFixtures$fixtures
     table_df = data.frame(
       Date = substring(table_data$date, 1, 10),

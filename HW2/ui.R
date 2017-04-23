@@ -122,7 +122,7 @@ ui <- dashboardPage(
                   selectizeInput(
                     'teamProfile',
                     'Select Team',
-                    choices = c("Juventus"),
+                    choices = c("Juventus", "Barcelona"),
                     multiple = FALSE
                   ),
                   htmlOutput("teamProfileContent")
