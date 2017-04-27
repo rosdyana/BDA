@@ -15,5 +15,10 @@ The idea come from my favorite sport ever, "football" or in the other side they 
 - build own RestFul API
 - etc
 
+### To-Do
+- add prediction for each league
+- add plot to compare 2 team
+- . . .
+
 ### Live
 [live-version](https://rosdyana.shinyapps.io/SoccerLeague/)
